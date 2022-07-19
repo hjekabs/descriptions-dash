@@ -1,6 +1,20 @@
 <template>
   <div>
-    <div v-if="descriptions.length"></div>
+    <div v-if="descriptions.length">
+      <v-layout
+        column
+        v-for="description in descriptions"
+        :key="description.id"
+      >
+        <v-textarea
+          solo
+          name="input-7-4"
+          label="Solo textarea"
+          :value="description.text"
+          auto-grow
+        ></v-textarea>
+      </v-layout>
+    </div>
     <div v-else class="d-flex flex-column justify-center align-center">
       <v-img
         src="/empty_descriptions.png"

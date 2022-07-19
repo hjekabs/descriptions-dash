@@ -59,9 +59,7 @@ export default {
         keywords: this.productKeywords,
         description: this.productDescription,
       }
-
-      console.log(data)
-      console.log('Save here')
+      this.$store.dispatch('descriptions/generateDescriptions', data)
     },
   },
 }

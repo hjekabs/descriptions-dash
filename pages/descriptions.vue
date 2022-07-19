@@ -5,7 +5,9 @@
         <DescriptionGenerator />
       </v-col>
       <v-col cols="12" md="6">
-        <DescriptionsShow :descriptions="[]" />
+        <DescriptionsShow
+          :descriptions="this.$store.state.descriptions.descriptions"
+        />
       </v-col>
     </v-row>
   </v-container>

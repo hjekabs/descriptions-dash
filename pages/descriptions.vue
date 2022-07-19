@@ -1,6 +1,6 @@
 <template>
   <v-container class="my-5">
-    <v-row justify="center" align="center">
+    <v-row justify="center">
       <v-col cols="12" md="6">
         <DescriptionGenerator />
       </v-col>

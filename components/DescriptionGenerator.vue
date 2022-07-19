@@ -35,7 +35,7 @@
     </v-layout>
 
     <v-layout>
-      <v-btn @click="generateDescriptions">Generate</v-btn>
+      <v-btn class="secondary" @click="generateDescriptions">Generate</v-btn>
     </v-layout>
   </v-form>
 </template>

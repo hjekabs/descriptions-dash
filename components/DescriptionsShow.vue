@@ -6,13 +6,23 @@
         v-for="description in descriptions"
         :key="description.id"
       >
-        <v-textarea
-          solo
-          name="input-7-4"
-          label="Solo textarea"
-          :value="description.text"
-          auto-grow
-        ></v-textarea>
+        <v-card outlined class="mb-5">
+          <v-card-text>
+            <v-textarea
+              solo
+              counter
+              rounded
+              name="input-7-4"
+              label="Solo textarea"
+              :value="description.text | cleanText"
+              auto-grow
+              background-color="grey darken-3"
+            ></v-textarea>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn small class="accent">Copy</v-btn>
+          </v-card-actions>
+        </v-card>
       </v-layout>
     </div>
     <div v-else class="d-flex flex-column justify-center align-center">
@@ -33,6 +43,11 @@ export default {
     descriptions: {
       type: Array,
       required: true,
+    },
+  },
+  filters: {
+    cleanText(value) {
+      return value.trim()
     },
   },
 }

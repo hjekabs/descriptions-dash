@@ -23,7 +23,7 @@
     </v-layout>
     <v-layout column>
       <label for="productTitle" class="mb-2"
-        >Describe you product: <small>Optional</small>
+        >Describe you product <small>(Optional)</small> :
       </label>
       <v-textarea
         v-model="productDescription"

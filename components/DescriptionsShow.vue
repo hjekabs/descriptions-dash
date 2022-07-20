@@ -11,7 +11,6 @@
             <v-textarea
               solo
               counter
-              rounded
               name="input-7-4"
               label="Solo textarea"
               :value="description.text | cleanText"
@@ -20,7 +19,20 @@
             ></v-textarea>
           </v-card-text>
           <v-card-actions>
-            <v-btn small class="accent">Copy</v-btn>
+            <v-tooltip top>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  small
+                  class="accent"
+                  @click="copyClipboard(description.text)"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon small>mdi-content-copy</v-icon> Copy</v-btn
+                >
+              </template>
+              <span>Click to copy</span>
+            </v-tooltip>
           </v-card-actions>
         </v-card>
       </v-layout>
@@ -48,6 +60,11 @@ export default {
   filters: {
     cleanText(value) {
       return value.trim()
+    },
+  },
+  methods: {
+    copyClipboard(text) {
+      navigator.clipboard.writeText(text.trim())
     },
   },
 }
